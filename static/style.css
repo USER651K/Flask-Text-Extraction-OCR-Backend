@@ -1,0 +1,134 @@
+/* Reset default margins and set box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and borders in width/height calculations */
+}
+
+/* Body styling to prevent overflow and set background */
+html, body {
+    height: 100%; /* Ensure body takes full height */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    background-color: aqua;
+    display: flex; /* Use flex to vertically align the body content */
+    flex-direction: column;
+}
+
+/* Header styling */
+#header {
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+}
+
+#header h1 {
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Button group styling */
+.d-grid {
+    margin-left: 10px;
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    justify-content: center; /* Center items horizontally */
+    gap: 10px; /* Space between items */
+}
+
+button {
+    flex: 0 1 auto; /* Allow buttons to shrink or grow as needed */
+}
+
+/* Center-align the main heading */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Main container styling */
+#container {
+    flex-grow: 1; /* Allows the container to grow to fill the available space */
+    margin: 20px;
+    display: flex;
+    flex-direction: row; /* Default to row layout for wide screens */
+    justify-content: space-between;
+    align-items: stretch; /* Ensure containers stretch to fill available space */
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    gap: 10px;
+}
+
+/* Canvas container styling */
+#canvasContainer {
+    flex: 1; /* Allows the container to grow and fill available space */
+    background-color: aliceblue;
+    display: flex;
+    align-items: center; /* Center the canvas within the container vertically */
+    justify-content: center; /* Center the canvas within the container horizontally */
+    overflow: hidden; /* Prevent overflow issues */
+    position: relative; /* Position relative for child absolute positioning */
+    min-height: 200px; /* Set a minimum height for small screens */
+}
+
+/* Canvas styling */
+#mycanvas {
+    max-width: 100%; /* Ensure canvas does not overflow horizontally */
+    max-height: 100%; /* Ensure canvas does not overflow vertically */
+    background-color: aliceblue;
+    display: block; /* Ensure canvas is treated as a block element */
+}
+
+/* Text area container styling */
+#extractTextContainer {
+    flex: 1; /* Allows the container to grow and fill available space */
+    background-color: beige;
+    display: flex;
+    flex-direction: column; /* Ensure the textarea takes available space */
+}
+
+/* Text area styling */
+#textarea {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    resize: none; /* Prevents resizing */
+    overflow-y: auto; /* Adds vertical scrollbar if needed */
+    flex-grow: 1; /* Allows the textarea to expand and take available space */
+}
+
+/* Footer styling */
+footer {
+    background-color: rgba(0, 0, 0, 0.05);
+    text-align: center;
+    padding: 10px;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
+
+    #canvasContainer {
+        height: 70vh; /* Set height to 50% of viewport height on small screens */
+    }
+
+    #extractTextContainer {
+        height: 70vh; /* Set height to 50% of viewport height on small screens */
+        overflow-y: auto; /* Ensure scrolling if content overflows */
+    }
+
+    .d-grid {
+        flex-direction: row; /* Align buttons horizontally on small screens */
+        flex-wrap: wrap; /* Allow wrapping if there's not enough space */
+    }
+    
+    button {
+        flex: 1; /* Allow buttons to grow and fill available space */
+        min-width: 120px; /* Ensure buttons have a minimum width */
+    }
+}
